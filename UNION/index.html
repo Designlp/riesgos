@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="estilo.css" />
+    <link rel="stylesheet" href="tabla.css" />
+    <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+    <div class="menu">
+        <ul>
+            <li>
+                <span onmouseenter="hoverEnter(0)"><i class="fas fa-exclamation-triangle"></i></span>
+            </li>
+            <li>
+                <span onmouseenter="hoverEnter(1)"><i class="fas fa-chart-bar"></i></span>
+
+            </li>
+            <span class="goo-index" id="goo-index"></span>
+        </ul>
+    </div>
+    <div class="content-wrapper">
+        <div id="screen_0" class="screen visible">
+            <h2>Matriz de Riesgo - Auditoría Informática</h2>
+
+
+            <div class="container">
+                <a class="button btnAgregar" href="#popup">AGREGAR RIESGO</a>
+                <div class="popup" id="popup">
+                    <div class="popup-inner">
+                        <div class="popup__photo">
+                            <img src="../assets/img/reg.jpg" alt="">
+                        </div>
+                        <div class="popup__text new">
+                            <label class="labels" for="impacto-select">Impacto de riesgo:</label>
+                            <div class="combobxx">
+                                <select id="impacto-select" required="">
+                                    <option value="0.2">Insignificante 20%</option>
+                                    <option value="0.4">Menor 40%</option>
+                                    <option value="0.6">Moderado 60%</option>
+                                    <option value="0.8">Mayor 80%</option>
+                                    <option value="1.0">Catastrófico 100%</option>
+                                </select>
+                            </div>
+                   
+                            <label class="labels" for="frecuencia-select">Calificar frecuencia del riesgo:</label>
+                            <div class="combobxx">
+                            <select id="frecuencia-select" required="">
+                                <option value="0.2">Improbable 20%</option>
+                                <option value="0.4">Posible 40%</option>
+                                <option value="0.6">Ocasional 60%</option>
+                                <option value="0.8">Probable 80%</option>
+                                <option value="1.0">Frecuente 100%</option>
+                            </select>
+                            </div>
+                            <div class="user-box">
+                                <input type="text" id="descripcion-input" placeholder=""
+                                    required="" />
+                                <label for="descripcion-input">Descripción</label>
+                            </div>
+
+
+                            <button id="agregar-btn" class="btnAgregar">Agregar Riesgo</button>
+                        </div>
+                        <a class="popup__close" href="#">X</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="form-container">
+
+
+
+                <h2>Riesgos Ingresados</h2>
+                <br>
+                <table class="table-fill" id="riesgos-table">
+                    <thead>
+                        <tr>
+                            <th>Riesgo</th>
+                            <th>Descripción</th>
+                            <th>Impacto</th>
+                            <th>Frecuencia</th>
+                        </tr>
+                    </thead>
+                    <tbody id="riesgos-body">
+                        <!-- Aquí se agregarán las filas de los riesgos ingresados -->
+                    </tbody>
+                </table>
+
+                <button id="reiniciar-btn" class="btnAgregar">REINICIAR</button>
+            </div>
+        </div>
+        <div id="screen_1" class="screen">
+
+            <h2>Matriz de Calor</h2>
+            <table id="matriz-calor">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="bajo noo">Bajo</th>
+                        <th class="moderado noo">Moderado</th>
+                        <th class="alto noo" >Alto</th>
+                        <th class="critico noo">Crítico</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="bajo noo">Bajo</th>
+                        <td class="celda-matriz bajo curva"></td>
+                        <td class="celda-matriz moderado"></td>
+                        <td class="celda-matriz alto"></td>
+                        <td class="celda-matriz critico curva1"></td>
+                    </tr>
+                    <tr>
+                        <th class="moderado noo">Moderado</th>
+                        <td class="celda-matriz moderado"></td>
+                        <td class="celda-matriz alto"></td>
+                        <td class="celda-matriz critico"></td>
+                        <td class="celda-matriz critico"></td>
+                    </tr>
+                    <tr>
+                        <th class="alto noo">Alto</th>
+                        <td class="celda-matriz alto"></td>
+                        <td class="celda-matriz critico"></td>
+                        <td class="celda-matriz critico"></td>
+                        <td class="celda-matriz critico"></td>
+                    </tr>
+                    <tr>
+                        <th class="critico noo">Crítico</th>
+                        <td class="celda-matriz critico curva3"></td>
+                        <td class="celda-matriz critico"></td>
+                        <td class="celda-matriz critico"></td>
+                        <td class="celda-matriz critico curva2"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Agrega este elemento al final de tu archivo HTML -->
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-description"></p>
+                </div>
+            </div>
+
+
+
+            <!-- POPUP -->
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-description"></p>
+                    <div id="modal-risk-level"></div>
+                    <p id="modal-result"></p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none">
+            <defs>
+                <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                        result="goo" />
+                    <feBlend in="SourceGraphic" in2="goo" />
+                </filter>
+            </defs>
+        </svg>
+
+        <script src="animation.js"></script>
+        <script src="script.js"></script>
+</body>
+
+</html>

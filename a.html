@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nivel de Riesgo - Auditoría Informática</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        .insignificante {
+            background-color: green;
+            color: white;
+        }
+
+        .menor {
+            background-color: limegreen;
+        }
+
+        .moderado {
+            background-color: yellow;
+        }
+
+        .mayor {
+            background-color: orange;
+            color: white;
+        }
+
+        .catastrofico {
+            background-color: red;
+            color: white;
+        }
+
+        #resultado {
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nivel de Riesgo - Auditoría Informática</h1>
+
+    <label for="impacto">Impacto de riesgo:</label>
+    <select id="impacto">
+        <option value="0.2">Insignificante 20%</option>
+        <option value="0.4">Menor 40%</option>
+        <option value="0.6">Moderado 60%</option>
+        <option value="0.8">Mayor 80%</option>
+        <option value="1.0">Catastrófico 100%</option>
+    </select>
+
+    <br><br>
+
+    <label for="frecuencia">Calificar frecuencia del riesgo:</label>
+    <select id="frecuencia">
+        <option value="0.2">Improbable 20%</option>
+        <option value="0.4">Posible 40%</option>
+        <option value="0.6">Ocasional 60%</option>
+        <option value="0.8">Probable 80%</option>
+        <option value="1.0">Frecuente 100%</option>
+    </select>
+
+    <br><br>
+
+    <label for="titulo">Título del Riesgo:</label>
+    <input type="text" id="titulo">
+
+    <br><br>
+
+    <button onclick="calcularRiesgo()">Calcular Riesgo</button>
+
+    <br><br>
+
+    <table id="tablaRiesgo">
+        <tr>
+            <td>Nivel de Riesgo</td>
+            <td>Color</td>
+        </tr>
+        <tr>
+            <td>Insignificante</td>
+            <td class="insignificante"></td>
+        </tr>
+        <tr>
+            <td>Menor</td>
+            <td class="menor"></td>
+        </tr>
+        <tr>
+            <td>Moderado</td>
+            <td class="moderado"></td>
+        </tr>
+        <tr>
+            <td>Mayor</td>
+            <td class="mayor"></td>
+        </tr>
+        <tr>
+            <td>Catastrófico</td>
+            <td class="catastrofico"></td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularRiesgo() {
+            var impacto = parseFloat(document.getElementById("impacto").value);
+            var frecuencia = parseFloat(document.getElementById("frecuencia").value);
+            var nivelRiesgo = impacto * frecuencia;
+
+            var tablaRiesgo = document.getElementById("tablaRiesgo");
+            var resultado = document.getElementById("resultado");
+            var titulo = document.getElementById("titulo").value;
+
+            tablaRiesgo.innerHTML = ""; // Limpiar la tabla
+
+            var row = tablaRiesgo.insertRow();
+            var nivelCell = row.insertCell(0);
+            var colorCell = row.insertCell(1);
+
+            nivelCell.innerHTML = titulo;
+            
+            if (nivelRiesgo <= 0.2) {
+                colorCell.innerHTML = "Insignificante";
+                colorCell.className = "insignificante";
+            } else if (nivelRiesgo <= 0.4) {
+                colorCell.innerHTML = "Menor";
+                colorCell.className = "menor";
+            } else if (nivelRiesgo <= 0.6) {
+                colorCell.innerHTML = "Moderado";
+                colorCell.className = "moderado";
+            } else if (nivelRiesgo <= 0.8) {
+                colorCell.innerHTML = "Mayor";
+                colorCell.className = "mayor";
+            } else {
+                colorCell.innerHTML = "Catastrófico";
+                colorCell.className = "catastrofico";
+            }
+
+            resultado.innerHTML = "Nivel de riesgo: " + colorCell.innerHTML;
+            resultado.style.color = colorCell.style.backgroundColor;
+        }
+    </script>
+</body>
+</html>

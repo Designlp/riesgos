@@ -1,0 +1,256 @@
+*{
+
+}
+.blackk{
+    font-family:  'MADE Okine Sans PERSONAL USE', ARIAL !important;
+    color: #383838 !important;
+    font-family:  'MADE Okine Sans PERSONAL USE', ARIAL !important;
+    font-weight: bolder;
+    font-weight: 700;
+    padding-top: 85px;
+    text-transform: uppercase;
+}
+.navcolor{
+    color: #383838 !important;
+}
+.tm-purple-color .tm-header-menu{
+    background-color: none !important;
+    background: none !important;
+}
+.tm-purple-color .tm-about-wrap{
+    background: #fff !important;
+    color: #383838 !important;
+}
+.tm-purple-color .tm-countdown-wrap.tm-style1 .tm-countdown-bg, .btngrad{
+    background: linear-gradient(129.97deg, rgba(231, 147, 154, 0.8) 48.51%, rgba(189, 82, 255, 0.8) 98.29%) !important;
+    opacity: 1 !important;
+}
+.span{
+    background: linear-gradient(129.97deg, #E7939A 48.51%, #BD52FF 98.29%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.btngrad{
+    font-weight: 300;
+    font-size: 20px;
+    border: none !important;
+    padding: 15px 25px 15px 25px !important;
+}
+.btngrad:hover{
+    color: #383838 !important;
+}
+.tm-purple-color .tm-ocher-work{
+    background: #fff !important;
+    color: #383838 !important;
+}
+.tm-purple-color .tm-section-heading-left h2, .oas{
+    color: #383838  !important;
+}
+.colrodt, .fff{
+    color: #fff !important;
+}
+
+.tm-token-status-bar-in {
+    width: 20% ;
+    animation: animacion 6s infinite; /* Aplica la animación a la clase "animated-element" con una duración de 2 segundos y se repite infinitamente */
+  }
+  
+  @keyframes animacion {
+    0% { width: 20%; } /* Primer paso de la animación: opacidad al 100% */
+    20% { width: 60%; } /* Segundo paso de la animación: opacidad al 50% */
+    40% { width: 80%; } /* Segundo paso de la animación: opacidad al 50% */
+    80% { width: 100%; } /* Segundo paso de la animación: opacidad al 50% */
+    100% { width: 20%; } /* Tercer paso de la animación: opacidad al 100% nuevamente */
+  }
+/* .colrodt{
+    background: #fff !important;
+    color: #383838 !important;
+} */
+.table-bordered{
+    box-shadow: 30px 30px 20px #383838 !important;
+}
+.verdeclaro{
+    background: #3AB34A !important;
+}
+.verde{
+    background: #2F903B !important;
+}
+
+.amarillo{
+    background: #F8EB10 !important;
+    color: #383838 !important;
+}
+.naranja{
+    background: #F79122 !important;
+}
+
+.rojo{
+    background: #E91720 !important;
+}
+
+.guindo{
+    background: #BB121A !important;
+}
+.text{
+
+    margin: 0px !important;
+    padding: 0px !important;
+    margin: auto !important;
+    margin-bottom: 20px !important;
+}
+.tm-purple-color .tm-ethereum{
+    left: 35.15% !important;
+}
+
+
+
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+}
+
+.insignificante {
+    background-color: #3AB34A !important;
+    color: white;
+}
+
+.menor {
+    background-color: #2F903B !important;
+}
+
+.moderado {
+    background-color: #F8EB10 !important;
+    color: #383838 !important;
+}
+
+.mayor {
+    background-color: #F79122 !important;
+    color: white;
+}
+
+.catastrofico {
+    background-color: #E91720 !important;
+    color: white;
+}
+
+#resultado {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.space{
+    margin-left: 10px !important;
+    width: 100% !important;
+    font-size: 18px !important;
+}
+
+.btnas{
+    background: none !important;
+    width: 20px !important;
+    height: 20px !important;
+
+}
+
+.green-slider-nav{
+    width: 120px !important;
+}
+.slick-slide div.space{
+    width: 100px !important;
+}
+
+.tm-green-roadmap-text{
+    font-family: 'Open Sans',sans-serif;
+    font-size: 20px;
+}
+
+.custom-select {
+    appearance: none; /* Elimina el estilo nativo del combo box */
+    padding: 10px; /* Añade espacio interno */
+    margin: 10px; /* Añade espacio externo */
+    border: 1px solid #ccc; /* Añade un borde */
+    border-radius: 5px; /* Añade esquinas redondeadas */
+    background-color: #f2f2f2; /* Añade color de fondo */
+    color: #ffffff; /* Añade color de texto */
+    font-size: 16px; /* Ajusta el tamaño de fuente */
+    background: none !important;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .custom-select:hover {
+    border-color: #ffffff; /* Cambia el color del borde al pasar el ratón por encima */
+  }
+  
+  .custom-select:focus {
+    outline: none; /* Elimina el contorno al enfocar */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Añade una sombra al enfocar */
+  }
+
+  .espacio {
+    padding: 100px !important; /* Añade espacio interno a las opciones */
+    margin: 50px !important; /* Añade espacio externo (margen superior e inferior) a las opciones */
+    color: #fff !important;
+  }
+  
+
+  input {
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	width: 300px;
+	border: none;
+	border-bottom: 1px solid #757575;
+    background: none;
+    color: #fff;
+    margin-bottom: 30px !important;
+}
+input:focus {
+	outline: none;
+}
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+	width: 50%;
+}
+
+/* active state */
+input:focus ~ .highlight {
+	-webkit-animation: inputHighlighter 0.3s ease;
+	-moz-animation: inputHighlighter 0.3s ease;
+	animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from {
+		background: #5264AE;
+	}
+	to {
+		width: 0;
+		background: transparent;
+	}
+}
+@-moz-keyframes inputHighlighter {
+	from {
+		background: #5264AE;
+	}
+	to {
+		width: 0;
+		background: transparent;
+	}
+}
+@keyframes inputHighlighter {
+	from {
+		background: #5264AE;
+	}
+	to {
+		width: 0;
+		background: transparent;
+	}
+}

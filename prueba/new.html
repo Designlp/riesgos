@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Matriz de Riesgo - Auditoría Informática</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>Matriz de Riesgo - Auditoría Informática</h1>
+  
+  <div class="form-container">
+    <label for="impacto-select">Impacto de riesgo:</label>
+    <select id="impacto-select">
+      <option value="0.2">Insignificante 20%</option>
+      <option value="0.4">Menor 40%</option>
+      <option value="0.6">Moderado 60%</option>
+      <option value="0.8">Mayor 80%</option>
+      <option value="1.0">Catastrófico 100%</option>
+    </select>
+    
+    <label for="frecuencia-select">Calificar frecuencia del riesgo:</label>
+    <select id="frecuencia-select">
+      <option value="0.2">Improbable 20%</option>
+      <option value="0.4">Posible 40%</option>
+      <option value="0.6">Ocasional 60%</option>
+      <option value="0.8">Probable 80%</option>
+      <option value="1.0">Frecuente 100%</option>
+    </select>
+    
+    <label for="descripcion-input">Descripción del riesgo:</label>
+    <input type="text" id="descripcion-input" placeholder="Ingrese la descripción">
+    
+    <button id="agregar-btn">Agregar Riesgo</button>
+    <button id="reiniciar-btn">REINICIAR</button>
+  </div>
+  <div id="popup" class="popup">
+    <div id="popup-content" class="popup-content">
+      <span id="popup-nombre"></span>
+      <span id="popup-porcentaje"></span>
+      <span id="popup-nivel"></span>
+    </div>
+  </div>
+  
+  <h2>Riesgos Ingresados</h2>
+  <table id="riesgos-table">
+    <thead>
+      <tr>
+        <th>Riesgo</th>
+        <th>Descripción</th>
+        <th>Impacto</th>
+        <th>Frecuencia</th>
+      </tr>
+    </thead>
+    <tbody id="riesgos-body">
+      <!-- Aquí se agregarán las filas de los riesgos ingresados -->
+    </tbody>
+  </table>
+  
+  <h2>Matriz de Calor</h2>
+  <table id="matriz-calor">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="bajo">Bajo</th>
+        <th class="moderado">Moderado</th>
+        <th class="alto">Alto</th>
+        <th class="critico">Crítico</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="bajo">Bajo</th>
+        <td class="celda-matriz bajo"></td>
+        <td class="celda-matriz moderado"></td>
+        <td class="celda-matriz alto"></td>
+        <td class="celda-matriz critico"></td>
+      </tr>
+      <tr>
+        <th class="moderado">Moderado</th>
+        <td class="celda-matriz moderado"></td>
+        <td class="celda-matriz alto"></td>
+        <td class="celda-matriz critico"></td>
+        <td class="celda-matriz critico"></td>
+      </tr>
+      <tr>
+        <th class="alto">Alto</th>
+        <td class="celda-matriz alto"></td>
+        <td class="celda-matriz critico"></td>
+        <td class="celda-matriz critico"></td>
+        <td class="celda-matriz critico"></td>
+      </tr>
+      <tr>
+        <th class="critico">Crítico</th>
+        <td class="celda-matriz critico"></td>
+        <td class="celda-matriz critico"></td>
+        <td class="celda-matriz critico"></td>
+        <td class="celda-matriz critico"></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-description"></p>
+    <div id="modal-risk-level"></div>
+    <p id="modal-result"></p>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
