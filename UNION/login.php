@@ -20,5 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   } else {
     echo 'Nombre de usuario no encontrado.';
   }
+
+  $_SESSION['username'] = $username;
 }
 ?>
