@@ -3,7 +3,7 @@ session_start();
 
 if (!isset($_SESSION['username'])) {
     // Si no está establecida, redirige al usuario a la página de inicio de sesión
-    header('Location: registrar.html');
+    header('Location: registro.html');
     exit();
 }
 ?>
