@@ -59,22 +59,22 @@ session_start();
                             <label class="labels" for="impacto-select">Impacto de riesgo:</label>
                             <div class="combobxx">
                                 <select id="impacto-select" required="">
-                                    <option value="1">1 </option>
-                                    <option value="2">2 </option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
+                                    <option value="1">Bajo 1</option>
+                                    <option value="2">Moderado 2 </option>
+                                    <option value="3">Alto 3</option>
+                                    <option value="4">Crítico 4</option>
+                                    <option value="5">Extremo 5</option>
                                 </select>
                             </div>
 
-                            <label class="labels" for="frecuencia-select">Calificar frecuencia del riesgo:</label>
+                            <label class="labels" for="frecuencia-select">Probabilidad del riesgo:</label>
                             <div class="combobxx">
                                 <select id="frecuencia-select" required="">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
+                                    <option value="1">Bajo 1</option>
+                                    <option value="2">Moderado 2</option>
+                                    <option value="3">Alto 3</option>
+                                    <option value="4">Crítico 4</option>
+                                    <option value="5">Extremo 5</option>
                                 </select>
                             </div>
 
@@ -95,6 +95,7 @@ session_start();
                             <th>Descripción</th>
                             <th>Impacto</th>
                             <th>Probabilidad</th>
+                            <th>Riesgo Inherente</th>
                         </tr>
                     </thead>
                     <tbody id="riesgos-body">

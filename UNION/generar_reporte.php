@@ -36,11 +36,11 @@ $html = '
 
 foreach ($riesgos as $riesgo) {
     $html .= "<tr>
-        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['nombre']}</td>
-        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['descripcion']}</td>
-        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['impacto']}</td>
-        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['frecuencia']}</td>
-        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['resultado']}</td>
+        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['Nombre']}</td>
+        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['Descripcion']}</td>
+        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['Impacto']}</td>
+        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['Probabilidad']}</td>
+        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['Riesgo Inherente']}</td>
     </tr>";
 }
 

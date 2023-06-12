@@ -69,10 +69,13 @@ function mostrarRiesgos() {
 
     const impactoCell = document.createElement('td');
     const frecuenciaCell = document.createElement('td');
+    modalResult.textContent = document.createElement('td');
 
     numCell.textContent = index + 1;
     riesgoCell.textContent = riesgo.descripcion;
     riesgoCell.textContent = riesgo.nombre;
+    modalResult.textContent =  riesgo.modalResult;
+
 
     impactoCell.textContent = riesgo.impacto;
     frecuenciaCell.textContent = riesgo.frecuencia;
