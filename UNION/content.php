@@ -24,10 +24,7 @@ session_start();
 <body>
     <div class="menu">
         <ul>
-        <li>
-                <span><a href="index.php"><i class="fas fa-sign-in-alt"></i></a></span>
-
-            </li>
+         
             <li>
                 <span onmouseenter="hoverEnter(0)"><i class="fas fa-exclamation-triangle"></i></span>
             </li>
@@ -36,9 +33,14 @@ session_start();
 
             </li>
             <li>
+                <span><a href="index.php"><i class="fas fa-sign-in-alt"></i></a></span>
+
+            </li>
+            <li>
                 <span><button id="logout-btn"><i class="fas fa-sign-out-alt"></i></button></span>
 
             </li>
+       
             <span class="goo-index" id="goo-index"></span>
 
 

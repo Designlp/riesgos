@@ -434,3 +434,9 @@ select::-ms-expand {
 .noo {
 	background: none !important;
 }
+
+#logout-btn{
+	background: none;
+    border: none;
+    font-size: 34px;
+}
