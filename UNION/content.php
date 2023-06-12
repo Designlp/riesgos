@@ -32,10 +32,10 @@ session_start();
                 <span onmouseenter="hoverEnter(1)"><i class="fas fa-chart-bar"></i></span>
 
             </li>
-            <li>
+            <!-- <li>
                 <span><a href="index.php"><i class="fas fa-sign-in-alt"></i></a></span>
 
-            </li>
+            </li> -->
             <li>
                 <span><button id="logout-btn"><i class="fas fa-sign-out-alt"></i></button></span>
 

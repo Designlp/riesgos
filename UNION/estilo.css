@@ -439,4 +439,5 @@ select::-ms-expand {
 	background: none;
     border: none;
     font-size: 34px;
+	cursor: pointer;
 }
