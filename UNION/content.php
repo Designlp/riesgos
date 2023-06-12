@@ -6,7 +6,7 @@ session_start();
 //     exit();
 // }
 
-$_SESSION['usuario'] = $username;
+$_SESSION['username'] = $username;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,8 +40,8 @@ $_SESSION['usuario'] = $username;
         <div id="screen_0" class="screen visible">
             <h2>Matriz de Riesgo - Auditoría Informática</h2>
             <?php
-            if (isset($_SESSION['usuario'])) {
-                echo "Hola, " . $_SESSION['usuario'] . "!";
+            if (isset($_SESSION['username'])) {
+                echo "Bienvenido, " . $_SESSION['username'] . "!";
             } else {
                 echo "No has iniciado sesión.";
             }
