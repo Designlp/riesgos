@@ -4,7 +4,6 @@ require 'db.php';
 require '../vendor/autoload.php';
 
 
-
 use Dompdf\Dompdf;
 
 if (!isset($_SESSION['user_id'])) {
@@ -21,17 +20,6 @@ $riesgos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Genera el contenido del PDF en HTML
 $html = '
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>riesgos</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
-    <link rel="stylesheet" href="estilo.css" />
-    <link rel="stylesheet" href="tabla.css" />
-    <link rel="stylesheet" href="popup.css" />
-</head>
-<body>
 <h1>Reporte de Riesgos</h1>
 <table class="table-fill">
 <thead>
@@ -40,11 +28,9 @@ $html = '
 <th>Descripción</th>
 <th>Impacto</th>
 <th>Frecuencia</th>
-<th>Resultado Inherente</th>
+<th>Resultado</th>
 </tr>
-</thead><tbody>
-</body>
-';
+</thead><tbody>';
 
 foreach ($riesgos as $riesgo) {
     $html .= "<tr>
