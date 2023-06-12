@@ -69,16 +69,15 @@ function mostrarRiesgos() {
 
     const impactoCell = document.createElement('td');
     const frecuenciaCell = document.createElement('td');
-    modalResult.textContent = document.createElement('td');
+    const inherenteCell = document.createElement('td');
 
     numCell.textContent = index + 1;
     riesgoCell.textContent = riesgo.descripcion;
     riesgoCell.textContent = riesgo.nombre;
-    modalResult.textContent =  riesgo.modalResult;
-
 
     impactoCell.textContent = riesgo.impacto;
     frecuenciaCell.textContent = riesgo.frecuencia;
+    inherenteCell.textContent = Math.round(riesgo.impacto * riesgo.frecuencia);
 
     const row = document.createElement('tr');
     row.appendChild(numCell);
@@ -86,6 +85,7 @@ function mostrarRiesgos() {
 
     row.appendChild(impactoCell);
     row.appendChild(frecuenciaCell);
+    row.appendChild(inherenteCell);
 
     riesgosBody.appendChild(row);
   });
