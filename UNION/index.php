@@ -28,9 +28,31 @@ session_start();
             <span class="goo-index" id="goo-index"></span>
         </ul>
     </div>
+    
     <div class="content-wrapper">
         <div id="screen_0" class="screen visible">
             <h2>Matriz de Riesgo - Auditoría Informática</h2>
+            <?php
+                // Consulta para obtener el nombre de usuario
+                $query = "SELECT name FROM usuarios WHERE id = 1"; // Cambia "tabla_de_usuarios" y "id" según tu estructura de base de datos
+                $result = $conn->query($query);
+
+                // Verificar si se obtuvo un resultado
+                if ($result->num_rows > 0) {
+                    // Obtener el nombre de usuario
+                    $row = $result->fetch_assoc();
+                    $nombreDeUsuario = $row["usarios"];
+
+                    // Mostrar el mensaje en tu sitio web
+                    echo "Hola, " . $nombreDeUsuario;
+                } else {
+                    echo "No se encontró ningún usuario.";
+                }
+
+                // Cerrar la conexión
+                $conn->close();
+            ?>
+
             <div class="container">
                 <a class="button btnAgregar" href="#popup">AGREGAR RIESGO</a>
                 <div class="popup" id="popup">
