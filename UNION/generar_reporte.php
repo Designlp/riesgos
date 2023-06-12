@@ -20,17 +20,19 @@ $riesgos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Genera el contenido del PDF en HTML
 $html = '
-<h1>Reporte de Riesgos</h1>
-<table class="table-fill">
+<h1 style="text-align:center; color: blue;">Reporte de Riesgos</h1>
+<table style="width:100%;border:1px solid black;border-collapse:collapse;">
 <thead>
 <tr>
-<th>Nombre</th>
-<th>Descripción</th>
-<th>Impacto</th>
-<th>Frecuencia</th>
-<th>Resultado</th>
+<th style="background-color: #4CAF50;color: white;border: 1px solid black;padding: 8px;text-align: left;">Nombre</th>
+<th style="background-color: #4CAF50;color: white;border: 1px solid black;padding: 8px;text-align: left;">Descripción</th>
+<th style="background-color: #4CAF50;color: white;border: 1px solid black;padding: 8px;text-align: left;">Impacto</th>
+<th style="background-color: #4CAF50;color: white;border: 1px solid black;padding: 8px;text-align: left;">Frecuencia</th>
+<th style="background-color: #4CAF50;color: white;border: 1px solid black;padding: 8px;text-align: left;">Resultado</th>
 </tr>
-</thead><tbody>';
+</thead>
+<tbody>';
+
 
 foreach ($riesgos as $riesgo) {
     $html .= "<tr>
