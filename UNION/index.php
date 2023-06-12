@@ -1,11 +1,10 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['username'])) {
-    // Si no está establecida, redirige al usuario a la página de inicio de sesión
-    header('Location: registro.html');
-    exit();
-}
+// if (!isset($_SESSION['username'])) {
+//     header('Location: registro.html');
+//     exit();
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
