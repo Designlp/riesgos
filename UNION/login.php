@@ -21,5 +21,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo 'Nombre de usuario no encontrado.';
   }
 
+
+
+}
+
+
+// Si el usuario no está autenticado, redirige a la página de inicio de sesión.
+if (!isset($_SESSION['username'])) {
+    header('Location: index.php'); // reemplaza 'login.php' con la URL de tu página de inicio de sesión
+    exit();
 }
 ?>

@@ -36,6 +36,7 @@ session_start();
     </div>
     
     <div class="content-wrapper">
+    <button id="logout-btn">Cerrar sesión</button>
         <div id="screen_0" class="screen visible">
             <h2>Matriz de Riesgo - Auditoría Informática</h2>
             <div class="container">
