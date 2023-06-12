@@ -197,3 +197,15 @@ function getColorByPercentage(percentage) {
     return matrizColores[4][4];
   }
 }
+
+
+const generarBtn = document.getElementById('generar-btn');
+
+generarBtn.addEventListener('click', () => {
+  fetch('generar_reporte.php')
+    .then(response => response.json())
+    .then(data => {
+      // Abre el PDF en una nueva ventana del navegador
+      window.open(data.ubicacion);
+    });
+});
