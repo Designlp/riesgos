@@ -14,7 +14,7 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param('sss', $username, $password, $name );
 // Ejecutamos la consulta
 if ($stmt->execute()) {
-    header('Location: index.php');
+    header('Location: content.php');
 } else {
     echo "Error: " . $stmt->error;
 }

@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($user = $stmt->fetch()) {
     if ($password === $user['password']) {
       $_SESSION['user_id'] = $user['id'];
-      header('Location: index.php');
+      header('Location: content.php');
       exit();
     } else {
       echo 'Contraseña incorrecta.';
