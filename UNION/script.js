@@ -8,12 +8,14 @@ const frecuenciaSelect = document.getElementById('frecuencia-select');
 const descripcionInput = document.getElementById('descripcion-input');
 const nombreInput = document.getElementById('nombre-input');
 const matrizCalor = document.getElementById('matriz-calor');
+const enviarBtn = document.getElementById('enviar-btn');
 
 agregarBtn.addEventListener('click', agregarRiesgo);
 reiniciarBtn.addEventListener('click', reiniciarDatos);
 
 mostrarRiesgos();
 generarMatrizCalor();
+enviarBtn.addEventListener('click', agregarRiesgo);
 
 // function agregarRiesgo() {
 //   const impacto = parseFloat(impactoSelect.value);
@@ -38,16 +40,13 @@ function agregarRiesgo() {
   const impacto = parseFloat(impactoSelect.value);
   const frecuencia = parseFloat(frecuenciaSelect.value);
   const descripcion = descripcionInput.value;
-  const nombre = nombreInput.value;
 
   const riesgo = {
     descripcion,
-    nombre,
     impacto,
     frecuencia
   };
 
-  // Enviar los datos a PHP a través de AJAX
   fetch('agregar_riesgo.php', {
     method: 'POST',
     headers: {
@@ -55,14 +54,24 @@ function agregarRiesgo() {
     },
     body: JSON.stringify(riesgo),
   })
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Error en la red");
+    }
+    return response.json();
+  })
   .then(data => {
-    // Recibir los datos de vuelta y añadirlos a la tabla
     riesgos.push(data);
     mostrarRiesgos();
     generarMatrizCalor();
     descripcionInput.value = '';
-    nombreInput.value = '';
+
+    // Mostrar un mensaje de validación al usuario
+    alert("Datos enviados a la base de datos con éxito");
+  })
+  .catch(error => {
+    // Mostrar un mensaje de error al usuario
+    alert("Ocurrió un error al enviar los datos a la base de datos: " + error.message);
   });
 }
 
