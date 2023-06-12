@@ -1,22 +1,24 @@
 <?php
 require 'db.php';
 
-// Leer los datos del POST
-$datos = json_decode(file_get_contents('php://input'), true);
+$data = json_decode(file_get_contents('php://input'), true);
 
-// Preparar la consulta SQL
-$sql = 'INSERT INTO riesgos (descripcion, impacto, frecuencia) VALUES (?, ?, ?)';
+$nombre = $data['nombre'];
+$descripcion = $data['descripcion'];
+$impacto = $data['impacto'];
+$frecuencia = $data['frecuencia'];
+
+$sql = 'INSERT INTO riesgos (nombre, descripcion, impacto, frecuencia) VALUES (?, ?, ?, ?)';
 $stmt = $pdo->prepare($sql);
+$stmt->execute([$nombre, $descripcion, $impacto, $frecuencia]);
 
-// Ejecutar la consulta con los datos recibidos
-$stmt->execute([$datos['descripcion'], $datos['impacto'], $datos['frecuencia']]);
+$riesgo = [
+  'id' => $pdo->lastInsertId(),
+  'nombre' => $nombre,
+  'descripcion' => $descripcion,
+  'impacto' => $impacto,
+  'frecuencia' => $frecuencia
+];
 
-// Recuperar el ID del nuevo riesgo
-$id = $pdo->lastInsertId();
-
-// Añadir el ID a los datos devueltos
-$datos['id'] = $id;
-
-// Enviar los datos de vuelta como JSON
-echo json_encode($datos);
+echo json_encode($riesgo);
 ?>
