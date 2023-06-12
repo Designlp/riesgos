@@ -5,6 +5,8 @@ session_start();
 //     header('Location: registro.html');
 //     exit();
 // }
+
+$_SESSION['usuario'] = $username;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +39,13 @@ session_start();
     <div class="content-wrapper">
         <div id="screen_0" class="screen visible">
             <h2>Matriz de Riesgo - Auditoría Informática</h2>
+            <?php
+            if (isset($_SESSION['usuario'])) {
+                echo "Hola, " . $_SESSION['usuario'] . "!";
+            } else {
+                echo "No has iniciado sesión.";
+            }
+            ?>
             <div class="container">
                 <a class="button btnAgregar" href="#popup">AGREGAR RIESGO</a>
                 <div class="popup" id="popup">
