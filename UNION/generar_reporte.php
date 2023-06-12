@@ -20,15 +20,15 @@ $riesgos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Genera el contenido del PDF en HTML
 $html = '
-<h1 style="text-align:center; color: #1e1e1e; font-family: "Arial"; ">Reporte de Riesgos</h1>
+<h1 style="text-align:center; color: #1e1e1e; font-family: Arial; ">Reporte de Riesgos</h1>
 <table style="width:100%;border:1px solid black;border-collapse:collapse;">
 <thead>
 <tr>
-<th style="font-family: "Arial"; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Nombre</th>
-<th style="font-family: "Arial"; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Descripción</th>
-<th style="font-family: "Arial"; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Impacto</th>
-<th style="font-family: "Arial"; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Frecuencia</th>
-<th style="font-family: "Arial"; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Resultado</th>
+<th style="font-family: Arial; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Nombre</th>
+<th style="font-family: Arial; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Descripción</th>
+<th style="font-family: Arial; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Impacto</th>
+<th style="font-family: Arial; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Frecuencia</th>
+<th style="font-family: Arial; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Resultado</th>
 </tr>
 </thead>
 <tbody>';
@@ -36,11 +36,11 @@ $html = '
 
 foreach ($riesgos as $riesgo) {
     $html .= "<tr>
-        <td style='font-family: 'Arial'; border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['nombre']}</td>
-        <td style='font-family: 'Arial'; border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['descripcion']}</td>
-        <td style='font-family: 'Arial'; border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['impacto']}</td>
-        <td style='font-family: 'Arial'; border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['frecuencia']}</td>
-        <td style='font-family: 'Arial'; border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['resultado']}</td>
+        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['nombre']}</td>
+        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['descripcion']}</td>
+        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['impacto']}</td>
+        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['frecuencia']}</td>
+        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['resultado']}</td>
     </tr>";
 }
 
