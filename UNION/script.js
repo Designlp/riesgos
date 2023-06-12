@@ -14,6 +14,25 @@ reiniciarBtn.addEventListener('click', reiniciarDatos);
 mostrarRiesgos();
 generarMatrizCalor();
 
+// function agregarRiesgo() {
+//   const impacto = parseFloat(impactoSelect.value);
+//   const frecuencia = parseFloat(frecuenciaSelect.value);
+//   const descripcion = descripcionInput.value;
+
+//   const riesgo = {
+//     descripcion,
+//     impacto,
+//     frecuencia
+//   };
+
+//   riesgos.push(riesgo);
+//   guardarDatosEnCache();
+//   mostrarRiesgos();
+//   generarMatrizCalor();
+
+//   descripcionInput.value = '';
+// }
+
 function agregarRiesgo() {
   const impacto = parseFloat(impactoSelect.value);
   const frecuencia = parseFloat(frecuenciaSelect.value);
@@ -25,12 +44,22 @@ function agregarRiesgo() {
     frecuencia
   };
 
-  riesgos.push(riesgo);
-  guardarDatosEnCache();
-  mostrarRiesgos();
-  generarMatrizCalor();
-
-  descripcionInput.value = '';
+  // Enviar los datos a PHP a través de AJAX
+  fetch('agregar_riesgo.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(riesgo),
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Recibir los datos de vuelta y añadirlos a la tabla
+    riesgos.push(data);
+    mostrarRiesgos();
+    generarMatrizCalor();
+    descripcionInput.value = '';
+  });
 }
 
 function mostrarRiesgos() {
