@@ -1,20 +1,20 @@
 <?php
 
 // Incluimos el archivo de conexión a la base de datos
-include_once 'conexion.php';
+include_once 'db.php';
 
 // Recogemos los datos del formulario
-$usuario = $_POST['usuario'];
-$nombre = $_POST['nombre'];
-$contrasena = $_POST['contrasena'];
+$username = $_POST['username'];
+$passwords = $_POST['password'];
+$names = $_POST['name'];
 
 // Creamos una contraseña segura utilizando la función password_hash
-$contrasenaHash = password_hash($contrasena, PASSWORD_DEFAULT);
+$contrasenaHash = password_hash($password, PASSWORD_DEFAULT);
 
 // Preparamos la consulta SQL
-$sql = "INSERT INTO usuarios (usuario, nombre, contrasena) VALUES (?, ?, ?)";
+$sql = "INSERT INTO usuarios (usuario, names, passwords) VALUES (?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('sss', $usuario, $nombre, $contrasenaHash);
+$stmt->bind_param('sss', $username, $names, $contrasenaHash);
 
 // Ejecutamos la consulta
 if ($stmt->execute()) {
