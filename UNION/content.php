@@ -31,12 +31,20 @@ session_start();
                 <span onmouseenter="hoverEnter(1)"><i class="fas fa-chart-bar"></i></span>
 
             </li>
+            <li>
+                <span onmouseenter="hoverEnter(1)"><i class="fas fa-chart-bar"><button id="logout-btn">Cerrar sesión</button></i></span>
+
+            </li>
             <span class="goo-index" id="goo-index"></span>
+
+
+
+            
         </ul>
     </div>
     
     <div class="content-wrapper">
-    <button id="logout-btn">Cerrar sesión</button>
+    
         <div id="screen_0" class="screen visible">
             <h2>Matriz de Riesgo - Auditoría Informática</h2>
             <div class="container">

@@ -217,17 +217,6 @@ generarBtn.addEventListener('click', () => {
 const logoutBtn = document.getElementById('logout-btn');
 
 logoutBtn.addEventListener('click', () => {
-    // Elimina la información de la sesión del usuario.
-    // Dependiendo de cómo manejes las sesiones, esto puede variar.
-    // Aquí hay un ejemplo si estás usando localStorage para guardar la información de la sesión.
-    localStorage.removeItem('user');
-    
-    // Redirige al usuario a la página de inicio de sesión.
-    window.location.href = 'index.php'; // reemplaza 'login.html' con la URL de tu página de inicio de sesión
-});
-
-
-logoutBtn.addEventListener('click', () => {
   // Hace una solicitud GET al archivo PHP de cierre de sesión.
   fetch('logout.php') // reemplaza 'logout.php' con la ruta a tu archivo PHP de cierre de sesión
   .then(response => {
