@@ -48,9 +48,6 @@ session_start();
                 } else {
                     echo "No se encontró ningún usuario.";
                 }
-
-                // Cerrar la conexión
-                $conn->close();
             ?>
 
             <div class="container">
