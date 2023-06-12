@@ -6,6 +6,7 @@ const reiniciarBtn = document.getElementById('reiniciar-btn');
 const impactoSelect = document.getElementById('impacto-select');
 const frecuenciaSelect = document.getElementById('frecuencia-select');
 const descripcionInput = document.getElementById('descripcion-input');
+const nombreInput = document.getElementById('nombre-input');
 const matrizCalor = document.getElementById('matriz-calor');
 
 agregarBtn.addEventListener('click', agregarRiesgo);
@@ -37,9 +38,11 @@ function agregarRiesgo() {
   const impacto = parseFloat(impactoSelect.value);
   const frecuencia = parseFloat(frecuenciaSelect.value);
   const descripcion = descripcionInput.value;
+  const nombre = nombreInput.value;
 
   const riesgo = {
     descripcion,
+    nombre,
     impacto,
     frecuencia
   };
@@ -59,6 +62,7 @@ function agregarRiesgo() {
     mostrarRiesgos();
     generarMatrizCalor();
     descripcionInput.value = '';
+    nombreInput.value = '';
   });
 }
 
@@ -74,6 +78,7 @@ function mostrarRiesgos() {
 
     numCell.textContent = index + 1;
     riesgoCell.textContent = riesgo.descripcion;
+    riesgoCell.textContent = riesgo.nombre;
 
     impactoCell.textContent = riesgo.impacto;
     frecuenciaCell.textContent = riesgo.frecuencia;
@@ -164,6 +169,7 @@ Array.from(celdasMatriz).forEach(celda => {
 
     modalTitle.textContent = 'Riesgo #' + (riesgoIndex + 1);
     modalDescription.textContent = riesgo.descripcion;
+    modalDescription.textContent = riesgo.nombre;
     modalRiskLevel.style.backgroundColor = getColorByPercentage(riesgo.impacto);
     modalRiskLevel.style.color = '#ffffff'; // Color del texto en el cuadro de riesgo
     modalResult.textContent = 'Resultado: ' + Math.round(riesgo.impacto * riesgo.frecuencia);
