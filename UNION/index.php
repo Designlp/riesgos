@@ -41,11 +41,11 @@ session_start();
                         </div>
                         <div class="popup__text new">
                             <div class="user-box">
-                                <div> <input type="text" id="descripcion-input" placeholder="" required="" />
-                                    <label for="descripcion-input">Descripción</label>
+                                <div> <input type="text" id="nombre-input" placeholder="Nombre" required="" />
+                                    <!-- <label for="nombre-input">Nombre</label> -->
                                 </div>
-                                <div> <input type="text" id="nombre-input" placeholder="" required="" />
-                                    <label for="nombre-input">Nombre</label>
+                                <div> <input type="text" id="descripcion-input" placeholder="Ingresa la Descripcion" required="" />
+                                    <!-- <label for="descripcion-input">Descripción</label> -->
                                 </div>
                             </div>
 
@@ -97,7 +97,6 @@ session_start();
 
                 <button id="reiniciar-btn" class="btnAgregar">REINICIAR</button>
                 <!-- Asegúrate de que este botón se encuentre dentro de tu formulario o donde sea relevante en tu HTML -->
-                <button id="enviar-btn" type="button">Enviar a la base de datos</button>
                 <button id="generar-btn" type="button">Generar PDF</button>
 
 
