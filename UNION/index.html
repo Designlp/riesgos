@@ -28,8 +28,6 @@
     <div class="content-wrapper">
         <div id="screen_0" class="screen visible">
             <h2>Matriz de Riesgo - Auditoría Informática</h2>
-
-
             <div class="container">
                 <a class="button btnAgregar" href="#popup">AGREGAR RIESGO</a>
                 <div class="popup" id="popup">
@@ -39,15 +37,14 @@
                         </div>
                         <div class="popup__text new">
                             <div class="user-box">
-                                <div> <input type="text" id="descripcion-input" placeholder=""
-                                    required="" />
-                                <label for="descripcion-input">Descripción</label></div>
-                                <div>         <input type="text" id="nombre-input" placeholder=""
-                                    required="" />
-                                    <label for="nombre-input">Nombre</label></div>
-                               
-                       
+                                <div> <input type="text" id="descripcion-input" placeholder="" required="" />
+                                    <label for="descripcion-input">Descripción</label>
+                                </div>
+                                <div> <input type="text" id="nombre-input" placeholder="" required="" />
+                                    <label for="nombre-input">Nombre</label>
+                                </div>
                             </div>
+                            
                             <label class="labels" for="impacto-select">Impacto de riesgo:</label>
                             <div class="combobxx">
                                 <select id="impacto-select" required="">
@@ -58,19 +55,17 @@
                                     <option value="5">5</option>
                                 </select>
                             </div>
-                   
+
                             <label class="labels" for="frecuencia-select">Calificar frecuencia del riesgo:</label>
                             <div class="combobxx">
-                            <select id="frecuencia-select" required="">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
+                                <select id="frecuencia-select" required="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
                             </div>
-            
-
 
                             <button id="agregar-btn" class="btnAgregar">Agregar Riesgo</button>
                         </div>
@@ -79,13 +74,7 @@
                 </div>
             </div>
 
-
-
-
             <div class="form-container">
-
-
-
                 <h2>Riesgos Ingresados</h2>
                 <br>
                 <table class="table-fill" id="riesgos-table">
@@ -109,7 +98,6 @@
             </div>
         </div>
         <div id="screen_1" class="screen">
-
             <h2>Matriz de Calor</h2>
             <table id="matriz-calor">
                 <thead>
@@ -117,7 +105,7 @@
                         <th></th>
                         <th class="bajo noo">1</th>
                         <th class="moderado noo">2</th>
-                        <th class="alto noo" >3</th>
+                        <th class="alto noo">3</th>
                         <th class="critico noo">4</th>
                         <th class="critico noo">5</th>
                     </tr>
@@ -163,7 +151,7 @@
                         <td class="celda-matriz critico"></td>
                         <td class="celda-matriz critico curva2"></td>
                     </tr>
-              
+
                 </tbody>
             </table>
 
@@ -178,7 +166,6 @@
                     <p class="texte" id="modal-result"></p>
                 </div>
             </div>
-
 
 
             <!-- POPUP -->

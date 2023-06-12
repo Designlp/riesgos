@@ -17,25 +17,6 @@ mostrarRiesgos();
 generarMatrizCalor();
 enviarBtn.addEventListener('click', agregarRiesgo);
 
-// function agregarRiesgo() {
-//   const impacto = parseFloat(impactoSelect.value);
-//   const frecuencia = parseFloat(frecuenciaSelect.value);
-//   const descripcion = descripcionInput.value;
-
-//   const riesgo = {
-//     descripcion,
-//     impacto,
-//     frecuencia
-//   };
-
-//   riesgos.push(riesgo);
-//   guardarDatosEnCache();
-//   mostrarRiesgos();
-//   generarMatrizCalor();
-
-//   descripcionInput.value = '';
-// }
-
 function agregarRiesgo() {
   const nombre = document.getElementById('nombre-input').value;
   const impacto = parseFloat(impactoSelect.value);
