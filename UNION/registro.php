@@ -5,16 +5,16 @@ include_once 'db.php';
 
 // Recogemos los datos del formulario
 $username = $_POST['username'];
-$passwords = $_POST['password'];
-$names = $_POST['name'];
+$password = $_POST['password'];
+$name = $_POST['name'];
 
 // Creamos una contraseña segura utilizando la función password_hash
-$contrasenaHash = password_hash($passwords, PASSWORD_DEFAULT);
+$contrasenaHash = password_hash($password, PASSWORD_DEFAULT);
 
 // Preparamos la consulta SQL
-$sql = "INSERT INTO usuarios (usuario, name, password) VALUES (?, ?, ?)";
+$sql = "INSERT INTO usuarios (username, password, name) VALUES (?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('sss', $username, $names, $contrasenaHash);
+$stmt->bind_param('sss', $username, $contrasenaHash, $name);
 
 // Ejecutamos la consulta
 if ($stmt->execute()) {
