@@ -8,14 +8,14 @@ const frecuenciaSelect = document.getElementById('frecuencia-select');
 const descripcionInput = document.getElementById('descripcion-input');
 const nombreInput = document.getElementById('nombre-input');
 const matrizCalor = document.getElementById('matriz-calor');
-const enviarBtn = document.getElementById('enviar-btn');
+
 
 agregarBtn.addEventListener('click', agregarRiesgo);
 reiniciarBtn.addEventListener('click', reiniciarDatos);
 
 mostrarRiesgos();
 generarMatrizCalor();
-enviarBtn.addEventListener('click', agregarRiesgo);
+
 
 function agregarRiesgo() {
   const nombre = document.getElementById('nombre-input').value;
