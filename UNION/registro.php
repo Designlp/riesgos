@@ -28,12 +28,4 @@ $conn->close();
 
 ?>
 
-<form action="registro.php" method="post">
-    <label for="usuario">Usuario:</label><br>
-    <input type="text" id="usuario" name="usuario"><br>
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="nombre"><br>
-    <label for="contrasena">Contraseña:</label><br>
-    <input type="password" id="contrasena" name="contrasena"><br>
-    <input type="submit" value="Registrarse">
-</form>
+
