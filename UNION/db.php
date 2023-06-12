@@ -9,7 +9,7 @@ $pdo = new PDO($dsn, $user, $pass);
 
 
 // Crea la conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $user, $pass, $db);
 
 // Verifica la conexión
 if ($conn->connect_error) {
