@@ -9,7 +9,7 @@ $passwords = $_POST['password'];
 $names = $_POST['name'];
 
 // Creamos una contraseña segura utilizando la función password_hash
-$contrasenaHash = password_hash($password, PASSWORD_DEFAULT);
+$contrasenaHash = password_hash($passwords, PASSWORD_DEFAULT);
 
 // Preparamos la consulta SQL
 $sql = "INSERT INTO usuarios (usuario, name, password) VALUES (?, ?, ?)";
