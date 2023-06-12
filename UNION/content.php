@@ -6,7 +6,6 @@ session_start();
 //     exit();
 // }
 
-$_SESSION['username'] = $username;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,13 +38,6 @@ $_SESSION['username'] = $username;
     <div class="content-wrapper">
         <div id="screen_0" class="screen visible">
             <h2>Matriz de Riesgo - Auditoría Informática</h2>
-            <?php
-            if (isset($_SESSION['username'])) {
-                echo "Bienvenido, " . $_SESSION['username'] . "!";
-            } else {
-                echo "No has iniciado sesión.";
-            }
-            ?>
             <div class="container">
                 <a class="button btnAgregar" href="#popup">AGREGAR RIESGO</a>
                 <div class="popup" id="popup">
@@ -112,7 +104,7 @@ $_SESSION['username'] = $username;
 
                 <button id="reiniciar-btn" class="btnAgregar">REINICIAR</button>
                 <!-- Asegúrate de que este botón se encuentre dentro de tu formulario o donde sea relevante en tu HTML -->
-                <button id="generar-btn" type="button">Generar PDF</button>
+                <button class="button btnAgregar" id="generar-btn" type="button">Generar PDF</button>
 
 
             </div>

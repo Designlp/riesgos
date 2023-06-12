@@ -21,6 +21,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo 'Nombre de usuario no encontrado.';
   }
 
-  $_SESSION['username'] = $username;
 }
 ?>
