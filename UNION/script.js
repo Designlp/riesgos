@@ -46,8 +46,8 @@ function mostrarRiesgos() {
     numCell.textContent = index + 1;
     riesgoCell.textContent = riesgo.descripcion;
 
-    impactoCell.textContent = riesgo.impacto * 100 + '%';
-    frecuenciaCell.textContent = riesgo.frecuencia * 100 + '%';
+    impactoCell.textContent = riesgo.impacto;
+    frecuenciaCell.textContent = riesgo.frecuencia;
 
     const row = document.createElement('tr');
     row.appendChild(numCell);
@@ -83,15 +83,15 @@ function generarMatrizCalor() {
 }
 
 function getIndexByPercentage(percentage) {
-  if (percentage === 0.2) {
+  if (percentage === 1) {
     return 0;
-  } else if (percentage === 0.4) {
+  } else if (percentage === 2) {
     return 1;
-  } else if (percentage === 0.6) {
+  } else if (percentage === 3) {
     return 2;
-  } else if (percentage === 0.8) {
+  } else if (percentage === 4) {
     return 3;
-  } else if (percentage === 1.0) {
+  } else if (percentage === 5) {
     return 4;
   }
 }
@@ -112,6 +112,7 @@ function reiniciarDatos() {
 const modal = document.getElementById('modal');
 const modalTitle = document.getElementById('modal-title');
 const modalDescription = document.getElementById('modal-description');
+const resultadoCalculado = document.getElementById('resultado-calculado');
 const modalRiskLevel = document.getElementById('modal-risk-level');
 const modalResult = document.getElementById('modal-result');
 const closeBtn = document.getElementsByClassName('close')[0];
@@ -136,8 +137,8 @@ Array.from(celdasMatriz).forEach(celda => {
     modalDescription.textContent = riesgo.descripcion;
     modalRiskLevel.style.backgroundColor = getColorByPercentage(riesgo.impacto);
     modalRiskLevel.style.color = '#ffffff'; // Color del texto en el cuadro de riesgo
-    modalResult.textContent = 'Resultado: ' + Math.round(riesgo.impacto * riesgo.frecuencia * 100) + '%';
-    modalResult.style.color = getColorByPercentage(riesgo.impacto); // Color del texto del resultado
+    modalResult.textContent = 'Resultado: ' + Math.round(riesgo.impacto * riesgo.frecuencia);
+    //modalResult.style.color = getColorByPercentage(riesgo.impacto);  Color del texto del resultado
     modal.style.display = 'block';
   });
 });
@@ -155,15 +156,15 @@ window.addEventListener('click', (event) => {
 });
 
 function getColorByPercentage(percentage) {
-  if (percentage === 0.2) {
+  if (percentage === 1) {
     return matrizColores[0][0];
-  } else if (percentage === 0.4) {
+  } else if (percentage === 2) {
     return matrizColores[1][1];
-  } else if (percentage === 0.6) {
+  } else if (percentage === 3) {
     return matrizColores[2][2];
-  } else if (percentage === 0.8) {
+  } else if (percentage === 4) {
     return matrizColores[3][3];
-  } else if (percentage === 1.0) {
+  } else if (percentage === 5) {
     return matrizColores[4][4];
   }
 }

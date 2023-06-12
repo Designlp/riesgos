@@ -41,22 +41,22 @@
                             <label class="labels" for="impacto-select">Impacto de riesgo:</label>
                             <div class="combobxx">
                                 <select id="impacto-select" required="">
-                                    <option value="0.2">Insignificante 20%</option>
-                                    <option value="0.4">Menor 40%</option>
-                                    <option value="0.6">Moderado 60%</option>
-                                    <option value="0.8">Mayor 80%</option>
-                                    <option value="1.0">Catastrófico 100%</option>
+                                    <option value="1">1 </option>
+                                    <option value="2">2 </option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
                                 </select>
                             </div>
                    
                             <label class="labels" for="frecuencia-select">Calificar frecuencia del riesgo:</label>
                             <div class="combobxx">
                             <select id="frecuencia-select" required="">
-                                <option value="0.2">Improbable 20%</option>
-                                <option value="0.4">Posible 40%</option>
-                                <option value="0.6">Ocasional 60%</option>
-                                <option value="0.8">Probable 80%</option>
-                                <option value="1.0">Frecuente 100%</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
                             </select>
                             </div>
                             <div class="user-box">
@@ -88,7 +88,7 @@
                             <th>Riesgo</th>
                             <th>Descripción</th>
                             <th>Impacto</th>
-                            <th>Frecuencia</th>
+                            <th>Probabilidad</th>
                         </tr>
                     </thead>
                     <tbody id="riesgos-body">
@@ -106,41 +106,55 @@
                 <thead>
                     <tr>
                         <th></th>
-                        <th class="bajo noo">Bajo</th>
-                        <th class="moderado noo">Moderado</th>
-                        <th class="alto noo" >Alto</th>
-                        <th class="critico noo">Crítico</th>
+                        <th class="bajo noo">1</th>
+                        <th class="moderado noo">2</th>
+                        <th class="alto noo" >3</th>
+                        <th class="critico noo">4</th>
+                        <th class="critico noo">5</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th class="bajo noo">Bajo</th>
+                        <th class="bajo noo">1</th>
                         <td class="celda-matriz bajo curva"></td>
+                        <td class="celda-matriz bajo"></td>
+                        <td class="celda-matriz bajo"></td>
+                        <td class="celda-matriz bajo"></td>
+                        <td class="celda-matriz moderado curva1"></td>
+                    </tr>
+                    <tr>
+                        <th class="moderado noo">2</th>
+                        <td class="celda-matriz bajo"></td>
+                        <td class="celda-matriz bajo"></td>
+                        <td class="celda-matriz moderado"></td>
                         <td class="celda-matriz moderado"></td>
                         <td class="celda-matriz alto"></td>
-                        <td class="celda-matriz critico curva1"></td>
                     </tr>
                     <tr>
-                        <th class="moderado noo">Moderado</th>
+                        <th class="critico noo">3</th>
+                        <td class="celda-matriz bajo"></td>
+                        <td class="celda-matriz moderado"></td>
                         <td class="celda-matriz moderado"></td>
                         <td class="celda-matriz alto"></td>
-                        <td class="celda-matriz critico"></td>
-                        <td class="celda-matriz critico"></td>
-                    </tr>
-                    <tr>
-                        <th class="alto noo">Alto</th>
                         <td class="celda-matriz alto"></td>
-                        <td class="celda-matriz critico"></td>
-                        <td class="celda-matriz critico"></td>
-                        <td class="celda-matriz critico"></td>
                     </tr>
                     <tr>
-                        <th class="critico noo">Crítico</th>
-                        <td class="celda-matriz critico curva3"></td>
-                        <td class="celda-matriz critico"></td>
+                        <th class="critico noo">4</th>
+                        <td class="celda-matriz bajo "></td>
+                        <td class="celda-matriz moderado"></td>
+                        <td class="celda-matriz alto"></td>
+                        <td class="celda-matriz alto"></td>
+                        <td class="celda-matriz  critico "></td>
+                    </tr>
+                    <tr>
+                        <th class="critico noo">5</th>
+                        <td class="celda-matriz moderado curva3"></td>
+                        <td class="celda-matriz alto"></td>
+                        <td class="celda-matriz alto"></td>
                         <td class="celda-matriz critico"></td>
                         <td class="celda-matriz critico curva2"></td>
                     </tr>
+              
                 </tbody>
             </table>
 
@@ -149,7 +163,10 @@
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <h2 id="modal-title"></h2>
-                    <p id="modal-description"></p>
+                    <h3>Descripción del Riesgo:</h3>
+                    <p class="texte" id="modal-description"></p>
+                    <h3>Riesgo Inherente</h3>
+                    <p class="texte" id="modal-result"></p>
                 </div>
             </div>
 
