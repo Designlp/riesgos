@@ -14,7 +14,7 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param('sss', $username, $password, $name );
 // Ejecutamos la consulta
 if ($stmt->execute()) {
-    echo "Usuario registrado con éxito";
+    header('Location: index.php');
 } else {
     echo "Error: " . $stmt->error;
 }
