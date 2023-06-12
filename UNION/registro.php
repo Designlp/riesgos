@@ -12,7 +12,7 @@ $names = $_POST['name'];
 $contrasenaHash = password_hash($password, PASSWORD_DEFAULT);
 
 // Preparamos la consulta SQL
-$sql = "INSERT INTO usuarios (usuario, names, passwords) VALUES (?, ?, ?)";
+$sql = "INSERT INTO usuarios (usuario, name, password) VALUES (?, ?, ?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('sss', $username, $names, $contrasenaHash);
 
