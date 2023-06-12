@@ -4,6 +4,7 @@ require 'db.php';
 require '../vendor/autoload.php';
 
 use Dompdf\Dompdf;
+use Dompdf\Options;
 
 if (!isset($_SESSION['user_id'])) {
   header('Location: login.php');
@@ -32,17 +33,23 @@ foreach ($riesgos as $riesgo) {
 
 $html .= '</tbody></table>';
 
-// Inicializa DOMPDF y carga el contenido HTML
-$dompdf = new Dompdf();
-$dompdf->loadHtml($html);
+$htmlContent = file_get_contents('reporte.html');
 
-// Renderiza el documento y genera el PDF
+// Creamos una nueva instancia de Dompdf
+$options = new Options();
+$options->set('isRemoteEnabled', TRUE);
+$dompdf = new Dompdf($options);
+
+// Cargamos el contenido HTML
+$dompdf->loadHtml($htmlContent);
+
+// Renderizamos el documento
 $dompdf->render();
-$output = $dompdf->output();
 
-// Guarda el PDF en un archivo
-file_put_contents('reporte.pdf', $output);
+// Guardamos el PDF generado
+$pdfOutput = $dompdf->output();
+file_put_contents('reporte.pdf', $pdfOutput);
 
-// Envía una respuesta JSON con la ubicación del PDF
+// Enviamos una respuesta JSON con la ubicación del PDF generado
 echo json_encode(['ubicacion' => 'reporte.pdf']);
 ?>
