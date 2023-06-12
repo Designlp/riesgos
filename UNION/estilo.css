@@ -312,13 +312,14 @@ select::-ms-expand {
 	background: white;
 	border-radius: 3px;
 	border-collapse: collapse;
-	height: 320px;
+	height: auto;
 	margin: auto;
-	max-width: 600px;
+	max-width: 1000px;
 	padding: 5px;
 	width: 100%;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 	animation: float 5s infinite;
+	margin-bottom: 40px;
 }
 
 .table-fill th {

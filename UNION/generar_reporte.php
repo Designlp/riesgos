@@ -27,8 +27,8 @@ $html = '
 <th style="font-family: Arial; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Nombre</th>
 <th style="font-family: Arial; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Descripción</th>
 <th style="font-family: Arial; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Impacto</th>
-<th style="font-family: Arial; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Frecuencia</th>
-<th style="font-family: Arial; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Resultado</th>
+<th style="font-family: Arial; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Probabilidad</th>
+<th style="font-family: Arial; background-color: #1e1e1e;color: white;border: 1px solid black;padding: 8px;text-align: left;">Riesgo Inherente</th>
 </tr>
 </thead>
 <tbody>';
@@ -36,11 +36,11 @@ $html = '
 
 foreach ($riesgos as $riesgo) {
     $html .= "<tr>
-        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['Nombre']}</td>
-        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['Descripcion']}</td>
-        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['Impacto']}</td>
-        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['Probabilidad']}</td>
-        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['Riesgo Inherente']}</td>
+        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['nombre']}</td>
+        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['descripcion']}</td>
+        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['impacto']}</td>
+        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['frecuencia']}</td>
+        <td style='border: 1px solid black;padding: 8px;text-align: left;'>{$riesgo['resultado']}</td>
     </tr>";
 }
 
