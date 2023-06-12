@@ -41,12 +41,14 @@ function agregarRiesgo() {
   const impacto = parseFloat(impactoSelect.value);
   const frecuencia = parseFloat(frecuenciaSelect.value);
   const descripcion = descripcionInput.value;
+  const resultado = impacto * frecuencia; // Calcula el resultado
 
   const riesgo = {
     nombre,
     descripcion,
     impacto,
-    frecuencia
+    frecuencia,
+    resultado // Agrega el resultado al objeto
   };
 
   fetch('agregar_riesgo.php', {
