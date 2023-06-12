@@ -41,11 +41,11 @@ session_start();
                         </div>
                         <div class="popup__text new">
                             <div class="user-box">
-                                <div> <input type="text" id="nombre-input" placeholder="Nombre" required="" />
-                                    <!-- <label for="nombre-input">Nombre</label> -->
+                                <div> <input type="text" id="descripcion-input" placeholder="" required="" />
+                                    <label for="descripcion-input">Descripción</label>
                                 </div>
-                                <div> <input type="text" id="descripcion-input" placeholder="Ingresa la Descripcion" required="" />
-                                    <!-- <label for="descripcion-input">Descripción</label> -->
+                                <div> <input type="text" id="nombre-input" placeholder="" required="" />
+                                    <label for="nombre-input">Nombre</label>
                                 </div>
                             </div>
 
