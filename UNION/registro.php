@@ -8,14 +8,10 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $name = $_POST['name'];
 
-// Creamos una contraseña segura utilizando la función password_hash
-$contrasenaHash = password_hash($password, PASSWORD_DEFAULT);
-
 // Preparamos la consulta SQL
 $sql = "INSERT INTO usuarios (username, password, name) VALUES (?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('sss', $username, $contrasenaHash, $name);
-
+$stmt->bind_param('sss', $username, $password, $name );
 // Ejecutamos la consulta
 if ($stmt->execute()) {
     echo "Usuario registrado con éxito";
