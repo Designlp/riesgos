@@ -1,12 +1,20 @@
 <?php
+session_start();
 require 'db.php';
 require '../vendor/autoload.php';
 
 use Dompdf\Dompdf;
 
-// Recupera todos los riesgos de la base de datos
-$stmt = $pdo->prepare("SELECT * FROM riesgos");
-$stmt->execute();
+if (!isset($_SESSION['user_id'])) {
+  header('Location: login.php');
+  exit();
+}
+
+$user_id = $_SESSION['user_id'];  // Obtén el ID del usuario de la sesión
+
+// Recupera todos los riesgos del usuario actual de la base de datos
+$stmt = $pdo->prepare("SELECT * FROM riesgos WHERE user_id = ?");
+$stmt->execute([$user_id]);
 $riesgos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Genera el contenido del PDF en HTML
